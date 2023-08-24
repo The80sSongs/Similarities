@@ -67,7 +67,7 @@
     <main>
         <form action="{{ url_for('create_playlist') }}" method="post">
             <input type="number" name="num_songs_to_add" placeholder="Number of Songs to Add" required>
-            <button type="submit">Create Playlist</button>
+            <button type="submit">Generate Playlist</button>
         </form>
         <div id="playlist">
             {% if tracks %}
