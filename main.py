@@ -7,6 +7,7 @@ from keep_alive import keep_alive
 import psutil
 import tempfile
 from flask_cors import CORS
+import shutil
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -164,6 +165,15 @@ def input_callback():
             return "Authentication failed. No authorization code received."
     else:
         return "Redirect URL not provided."
+
+@app.route('/clear_cache')
+def clear_cache():
+    try:
+        shutil.rmtree(cache_directory)
+        os.makedirs(cache_directory)
+        return "Cache cleared successfully."
+    except Exception as e:
+        return f"Error clearing cache: {str(e)}"
 
 def kill_process_by_port(port):
     for process in psutil.process_iter(attrs=['pid', 'name', 'connections']):
