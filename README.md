@@ -42,12 +42,8 @@ Click on the Spotify link to open the playlist in the Spotify app.
 
 Attribution
 
-This project uses the Spotify API to access and recommend tracks. All Spotify content is linked back to the Spotify Service.
-
-License
-
-This project is licensed under the MIT License.
+This project uses the Spotify API to access and recommend tracks. All Spotify content is linked back to the Spotify Service(https://support.spotify.com/us/article/what-is-spotify/).
 
 Contact
 
-For any inquiries or suggestions, please contact @The80sSongs.
+For any inquiries or suggestions, please contact @The80sSongs(https://github.com/The80sSongs).
