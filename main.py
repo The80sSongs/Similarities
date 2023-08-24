@@ -9,7 +9,7 @@ import tempfile
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 clientID = os.environ.get('clientID')
 clientSECRET = os.environ.get('clientSECRET')
@@ -56,7 +56,8 @@ def callback():
                 track_info = {
                     'name': track['track']['name'],
                     'artist': track['track']['artists'][0]['name'],
-                    'image': track['track']['album']['images'][0]['url']
+                    'image': track['track']['album']['images'][0]['url'],
+                    'album_name': track['track']['album']['name']
                 }
                 tracks.append(track_info)
 
@@ -109,7 +110,8 @@ def create_playlist():
           track_info = {
               'name': track['track']['name'],
               'artist': track['track']['artists'][0]['name'],
-              'image': track['track']['album']['images'][0]['url']
+              'image': track['track']['album']['images'][0]['url'],
+              'album_name': track['track']['album']['name']
           }
           tracks.append(track_info)
   
